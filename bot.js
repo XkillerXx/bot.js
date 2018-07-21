@@ -1,4 +1,4 @@
-6- نكتب فيه كذا 
+
 
 const Discord = require('discord.js');
 
@@ -477,7 +477,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
 
    
 
-	client.login("NDQ2NjU3MTU4NTkxOTM4NTYw.Dd8NoQ.ReMuV8g-Qk2PJU5uaKFwGLTuO44");  
+	
 
 
 client.login(process.env.BOT_TOKEN);  //اياكككك تلعب هنا لا تحط توكنك هنا  
