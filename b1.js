@@ -1498,8 +1498,8 @@ msg.delete();
 
 
 
-
-
+const args = message.content.split.slice(1).join(' ');
+        
         let defineduser = '';
         if (!args[1]) { // If they didn't define anyone, set it to their own.
             defineduser = message.author;
