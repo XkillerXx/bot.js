@@ -92,6 +92,7 @@
 
     "simple-youtube-api": "^5.0.2"
 
+    "canvas": "^1.6.11"
   }
 
 } 
