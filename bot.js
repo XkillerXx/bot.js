@@ -25,7 +25,7 @@ client.on('message', message => {
 
 
 
-const Discord = require("discord.js");
+
 
 const ytdl = require("ytdl-core");
 
