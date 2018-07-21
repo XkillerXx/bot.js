@@ -170,7 +170,7 @@ msg.delete();
 
 
 client.on('message', message => {
-    const prefix = '$'
+    
 var args = message.content.split(" ").slice(1);    
 if(message.content.startsWith(prefix + 'id')) {
 var year = message.author.createdAt.getFullYear()
