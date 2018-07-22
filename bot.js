@@ -21,7 +21,10 @@ client.on('message', message => {
 
 });
 
+client.on('ready', () => {
+     client.user.setActivity("$help By TheReaper",{type: 'WATCHING'})
 
+});
 
 
 
