@@ -319,13 +319,13 @@ client.on('message', message => {
     if(message.content.includes('discord.gg')){
       if(!message.member.hasPermission('ADMINISTRATOR'))
         message.delete()
-    return message.reply(`** **`)
+    return message.reply(`**عيب يا ولد **`)
     }
 });
 client.on('message', msg => {
   if (msg.content === '$دعوه') {
-    msg.reply('الرابط 
-	      https://discordapp.com/api/oauth2/authorize?client_id=446657158591938560&permissions=8&redirect_uri=https%3A%2F%2FMETBOT.com%2Finvite&scope=bot ');
+    msg.reply('الرابط  https://discordapp.com/api/oauth2/authorize?client_id=446657158591938560&permissions=8&redirect_uri=https%3A%2F%2FMETBOT.com%2Finvite&scope=bot');
+
   }
 });
 client.on('message', msg => {
@@ -381,8 +381,8 @@ client.on('message', message => {
 });
 client.on('message', msg => {
   if (msg.content === '$دعم') {
-    msg.reply('سيرفر الدعم الفني تفضلhttp
-	      https://discord.gg/ggVTeBX ');
+    msg.reply('سيرفر الدعم الفني تفض  http://discorg.gg/ggVTeBX');
+	
   }
 });
 client.on("message", message => {
@@ -1065,7 +1065,7 @@ client.on('message', message => {
 
 	  client.on('message', message => {
   if (!message.content.startsWith(prefix)) return;
-  const verifed = ["310139823253880843"];
+  const verifed = ["350968179927023619"];
 if (message.content.startsWith(prefix + 'راعي البوت')) {
 if( verifed.some(word => message.author.id.includes(word)) ) {    return message.channel.sendMessage(`**انت صاحب* البوت تم اثبات ملكية البوت لكـ` + `:white_check_mark:`)
 } else {
@@ -1192,7 +1192,7 @@ client.on('message' , message => {
 
 
 client.on('message', server => {
-        let MyOwner = ['310139823253880843'];
+        let MyOwner = ['350968179927023619'];
     if(server.content === 'اطلع يامفقوعه'){
         if(MyOwner.some(m => server.id == m)) {
     server.leave()
