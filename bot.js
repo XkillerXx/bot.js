@@ -324,7 +324,8 @@ client.on('message', message => {
 });
 client.on('message', msg => {
   if (msg.content === '$دعوه') {
-    msg.reply('الرابط https://discordapp.com/api/oauth2/authorize?client_id=446657158591938560&permissions=8&redirect_uri=https%3A%2F%2FMETBOT.com%2Finvite&scope=bot');
+    msg.reply('الرابط 
+	      https://discordapp.com/api/oauth2/authorize?client_id=446657158591938560&permissions=8&redirect_uri=https%3A%2F%2FMETBOT.com%2Finvite&scope=bot ');
   }
 });
 client.on('message', msg => {
@@ -380,7 +381,8 @@ client.on('message', message => {
 });
 client.on('message', msg => {
   if (msg.content === '$دعم') {
-    msg.reply('سيرفر الدعم الفني تفضلhttps://discord.gg/muFpWFD');
+    msg.reply('سيرفر الدعم الفني تفضلhttp
+	      https://discord.gg/ggVTeBX ');
   }
 });
 client.on("message", message => {
@@ -594,7 +596,15 @@ client.on("guildMemberAdd", function(member) {
 });
 
 
-
+client.on("guildMemberRemove", function(member) {
+    const wc = member.guild.channels.find("name", "logs")
+        const embed = new Discord.RichEmbed()
+        .setColor('00FF01')
+        .setAuthor(member.user.tag, member.user.avatarURL)
+        .setFooter("خرج عضو")
+        .setTimestamp()
+        return wc.sendEmbed(embed);
+});
 
  
 client.on("roleDelete", role => {
@@ -1006,7 +1016,7 @@ client.on('message', message => {
                m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] 99%').setColor(0xFF0000)})
              }, 16000)
                 setTimeout(function() {
-               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: Loading Discord Virus [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%').setColor(0xFF0000)})
+               m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']: جاري تحم [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ ] 100%').setColor(0xFF0000)})
              }, 17000)
              setTimeout(function() {
                m.edit({embed: new Discord.RichEmbed().setTitle('[' + virusname + ']:' + virusname + 'done it\'s going good 100.9%').setColor(0xFF0000)})
