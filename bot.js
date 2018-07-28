@@ -381,7 +381,7 @@ client.on('message', message => {
 });
 client.on('message', msg => {
   if (msg.content === '$دعم') {
-    msg.reply('سيرفر الدعم الفني تفض https://discord.gg/U7JrDQ2 ');
+    msg.reply('سيرفر الدعم الفني تفضل https://discord.gg/U7JrDQ2 ');
 	
   }
 });
@@ -607,34 +607,7 @@ client.on("guildMemberRemove", function(member) {
 });
 
  
-client.on("roleDelete", role => {
-  client.setTimeout(() => {
-    role.guild.fetchAuditLogs({
-        limit: 1,
-        type: 30
-      })
-      .then(audit => {
-        let exec = audit.entries.map(a => a.executor.username)
-        try {
 
-          let log = role.guild.channels.find('name', 'logs');
-          if (!log) return;
-          let embed = new Discord.RichEmbed()
-            .setColor('#fd0101')            
-            .setTitle('❌ RoleDeleted')
-            .addField('اسم الرتبة:', role.name, true)
-            .addField('أيدي الرتبة:', role.id, true)
-            .addField('تم مسح الرتبة من قبل:', exec, true)
-            .setTimestamp()
-          log.send(embed).catch(e => {
-            console.log(e);
-          });
-        } catch (e) {
-          console.log(e);
-        }
-      })
-  }, 1000)
-});
 
 
 
