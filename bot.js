@@ -381,7 +381,7 @@ client.on('message', message => {
 });
 client.on('message', msg => {
   if (msg.content === '$دعم') {
-    msg.reply('سيرفر الدعم الفني تفض  http://discorg.gg/ggVTeBX');
+    msg.reply('سيرفر الدعم الفني تفض https://discord.gg/U7JrDQ2 ');
 	
   }
 });
