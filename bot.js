@@ -141,7 +141,7 @@ message.channel.send({ embed  : EmojiEmbed });
               .setTitle("✏  تم تغيير اسم الرتبه")
               .addField("الاسم القديم",`${re.name}`,true)
               .addField("الاسم الجديد",`${updated.name}`,true )
-              .addField("Role id",`${re.id}`,true )
+              .addField("ايدي الرتبه",`${re.id}`,true )
               .addField('من قبل', exec, true)
               .setTimestamp()
             log.send(embed).catch(e => {
