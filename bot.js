@@ -113,7 +113,7 @@ client.on('voiceStateUpdate', (u, member) => {
 
 
 
-
+const fs = require('fs'); 
 client.on('message', message => {
   if (message.author.bot) return;
  if(!message.channel.guild) return;
