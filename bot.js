@@ -113,117 +113,11 @@ client.on('voiceStateUpdate', (u, member) => {
 
 
 
-const fs = require('fs'); 
-client.on('message', message => {
-  if (message.author.bot) return;
- if(!message.channel.guild) return;
- if (!points[message.author.id]) points[message.author.id] = {
-	points: 0,
-  wins: 0,
-  loses: 0,
-  };
-if (message.content.startsWith(prefix + 'انمي')) {
- const type = require('./anime.json');
-const item = type[Math.floor(Math.random() * type.length)];
-const filter = response => {
-    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-};
-message.channel.send('**لديك 10  ثواني لتخمن الانمي**').then(msg => {
-    const embed = new Discord.RichEmbed()
- .setColor("RANDOM")
-    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
- .setThumbnail(message.author.avatarURL)     
- .addField(`**Star Codes**`,` **${item.type}**`)
- .setFooter(`ستكسب 15 نقطة`)
- msg.channel.send(embed).then(() => {
-        message.channel.awaitMessages(filter, { maxMatches: 1, time: 10000, errors: ['time'] })
-        .then((collected) => {
-		message.channel.send(`**${ collected.first().author} مبروك لقد كسبت 15 نقطة 
-لمعرفة نقاطك الرجاء كتابة *point**` , '');
-		console.log(`[Typing] ${collected.first().author} typed the word.`);
-			let userData = points[collected.first().author.id];
-userData.wins += 1 
-userData.points += 15; 
-           })
-           .catch(collected => {
-points[message.author.id].loses += 1;
-             message.channel.send(`:x: ** الاجابه الصحيحه هي : __${item.answers}__حظ اوفر المرة القادمة ! لقد خسرت , انتهى الوقت**` , '');
-			console.log('[Typing] Error: No one type the word.');
- 		})
-	})
-    })
-points[message.author.id].game += 1; 
- }
-fs.writeFile("./point.json",JSON.stringify(points), function(err){
-    if (err) console.log(err);
-  })
-});
-    
-    
-    
-    
-    
-    let points = JSON.parse(fs.readFileSync(`./point.json`, `utf8`));
-
-    var shortNumber = require('short-number');
-
-    
-    
-    client.on('message', message => {
-
-if (!points[message.author.id]) points[message.author.id] = {
-	points: 0,
-  wins: 0,
-  loses: 0,
-  game: 0,
-
-  };
-  if (message.author.bot) return;
 
 
-if(!message.channel.guild) return;
-	let userData = points[message.author.id];
 
-if (message.content.startsWith(prefix + 'point')) {
-let pointss = userData.points
-try {
-                            pointss = shortNumber(pointss);
-                        } catch (error) {
-                            pointss = 0;
-                        }
-                        let wins = userData.wins
-try {
-                            wins = shortNumber(wins);
-                        } catch (error) {
-                            wins = 0;
-                        }
-                        let loses = userData.loses
-try {
-                            loses = shortNumber(loses);
-                        } catch (error) {
-                            loses  = 0;
-                        }
-                         let games = userData.game
-try {
-                            games = shortNumber(games);
-                        } catch (error) {
-                            games  = 0;
-                        }
-	let embed = new Discord.RichEmbed()
-    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-	.setColor('#000000')
-	.setDescription(`**TRBOT
-:white_check_mark: عدد الفوز : ${wins}
-:x: عدد الخسارة: ${loses}
-:label:التقاط: ${pointss}
-:video_game: عدد مرات اللعب: ${games}**` , '');
-	message.channel.sendEmbed(embed)
-  }
-  fs.writeFile("./point.json", JSON.stringify(points), (err) => {
-    if (err) console.error(err)
-  })
-
-});
+                        
+                            
 
 
 
@@ -232,30 +126,6 @@ try {
  
   
     
-client.on('message', message =>{
-  let args = message.content.split(' ');
-  let prefix = '$';
-if(args[0] === `${prefix}فيس`){
-let findEmoji = args[1];
-
-if(!findEmoji || findEmoji === '') return  message.reply(`**أدخل الايموجي**`);
-
-let EmojiId = findEmoji.slice(findEmoji.length - 19,findEmoji.length -1);
-
-if(isNaN(EmojiId)) return message.reply(`**لم استطع العثور على الايموجي المطلوب**`);
-
-let EmojiURL = `https://cdn.discordapp.com/emojis/${EmojiId}.png`;
-
-let EmojiEmbed = new Discord.RichEmbed()
-.setColor('RANDOM')
-.setTitle(`Link Emoji ${findEmoji}`)
-.setURL(`${EmojiURL}`)
-.setImage(`${EmojiURL}`)
-
-message.channel.send({ embed  : EmojiEmbed });
-
-};
-});
  
 
  
