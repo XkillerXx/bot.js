@@ -418,7 +418,7 @@ client.on('message', message => {
 });
 client.on('message', msg => {
   if (msg.content === '$دعم') {
-    msg.reply('سيرفر الدعم الفني تفضل https://discord.gg/U7JrDQ2 ');
+    msg.reply('سيرفر الدعم الفني تفضل https://discord.gg/zHQcfeR ');
 	
   }
 });
