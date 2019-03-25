@@ -349,25 +349,25 @@ client.on('message', message => {
 });
  
 var prefix = "$";
+
+ 
 client.on('message', message => {
     if (!message.guild) return;
     if (message.content.startsWith(prefix + "رابط")) {
 
         message.channel.createInvite({
         thing: true,
-        maxUses: 100,
-        maxAge: 900000000
+        maxUses: 5,
+        maxAge: 86400
     }).then(invite =>
       message.author.sendMessage(invite.url)
     )
   message.channel.send(`** تم أرسال الرابط برسالة خاصة **`)
 
       message.author.send(`**مدة الرابط : يـوم
- عدد استخدامات الرابط : 100 **`)
+ عدد استخدامات الرابط : 5 **`)
     }
 });
-
- 
 
 
 client.on('message', message => {
