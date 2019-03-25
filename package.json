@@ -91,7 +91,16 @@
     "ffmpeg-binaries": "^3.2.2-3",
 
     "simple-youtube-api": "^5.0.2"
-    
+          
+    "long": "4.0.0",
+
+     "prism-media": "0.0.2",
+
+     "snekfetch": "3.6.4",
+
+     "tweetnacl": "1.0.0",
+
+     "ws": "4.1.0"
   }
 
 } 
