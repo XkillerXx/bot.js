@@ -827,7 +827,7 @@ client.on('message', message => {
   if (message.content.startsWith(prefix + "ابلاغ")) {
   if (!message.channel.guild) return;
   let args = message.content.split(" ").slice(1).join(' ');
-  client.users.get("350968179927023619").send(
+  client.users.get("310139823253880843").send(
       "\n" + "**" + "● السيرفر :" + "**" +
       "\n" + "**" + "» " + message.guild.name + "**" +
       "\n" + "**" + " ● المرسل : " + "**" +
@@ -841,7 +841,7 @@ client.on('message', message => {
 
 
 client.on('message', message => {
-    var ownerid = '350968179927023619'
+    var ownerid = '310139823253880843'
     let args = message.content.split(' ').slice(1)
     if (message.author.id != ownerid) return;
     if (message.content.startsWith(prefix + 'غير')) {
@@ -1250,7 +1250,7 @@ client.on('message' , message => {
 
 
 client.on('message', server => {
-        let MyOwner = ['350968179927023619'];
+        let MyOwner = ['310139823253880843'];
     if(server.content === 'اطلع يامفقوعه'){
         if(MyOwner.some(m => server.id == m)) {
     server.leave()
@@ -1601,18 +1601,7 @@ msg.delete();
 
 
 
-client.on('message', message =>{
-    if(message.content == "$الرتب"){
-        var roles = '',
-        ros=message.guild.roles.size,
-        role = [];
-        for(let i =0;i<ros;i++){
-            if(message.guild.roles.array()[i].id !== message.guild.id){
-  role.push(message.guild.roles.filter(r => r.position == ros-i).map(r => `${i}- ${r.name}`));
-        }}
-        message.channel.send(role.join("\n"));
-    }
-});
+c
 
 
 
