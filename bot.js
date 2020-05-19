@@ -59,27 +59,6 @@ if (message.content === "$help") {
 
 امر ايموجيات السيرفر. ${prefix}الفيسات
 ===========================
-اوامر الميوزك 🎶
-===========================
-${prefix}play ⇏ لتشغيل أغنية برآبط أو بأسم
-${prefix}skip ⇏ لتجآوز الأغنية الحآلية
-${prefix}pause ⇏ إيقآف الأغنية مؤقتا
-${prefix}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
-${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
-${prefix}stop ⇏ لإخرآج البوت من الروم
-${prefix}np ⇏ لمعرفة الأغنية المشغلة حآليا
-${prefix}queue ⇏ لمعرفة قآئمة التشغيل
-
-===========================
-اوامر الالعاب
-===========================
-${prefix}حب
-${prefix}صراحه
-${prefix}عقاب
-${prefix}لو خيروك
-الهاك الوهمي ${prefix}هاك
-${prefix}فكك
-===========================
 `) 
  message.author.sendEmbed(embed) 
 
@@ -91,22 +70,6 @@ ${prefix}فكك
 
 			
 
-client.on('voiceStateUpdate', (u, member) => {
-  var parent = '473463177896787968';
-  var channel = '473463239414644739';
-  if(member.voiceChannel === null || member.voiceChannel !== member.guild.channels.get(channel)) return console.log(`${member.user.username}'s channel isnt the needed one.`);
-  member.guild.createChannel(`${member.user.username}`, 'voice').then(c => {
-    if(!c) return;
-    c.setParent(parent);
-    member.setVoiceChannel(c);
-    setInterval(() => {
-      if(!c) return;
-      if(c.members.size === 0) {
-        c.delete();
-      }
-    }, 30000);
-  });
-});
  
 
 
