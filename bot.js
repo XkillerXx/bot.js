@@ -92,36 +92,6 @@ if (message.content === "$help") {
  
 
  
-  
-  client.on("roleUpdate", (re,updated) => {
-    client.setTimeout(() => {
-      re.guild.fetchAuditLogs({
-          limit: 1,
-          type: 30
-        })
-        .then(audit => {
-          let exec = audit.entries.map(a => a.executor.username)
-          try {
-  
-            let log = re.guild.channels.find('name', 'logs');
-            if (!log) return;
-            let embed = new Discord.RichEmbed()
-              .setColor('BLACK')
-              .setTitle("✏  تم تغيير اسم الرتبه")
-              .addField("الاسم القديم",`${re.name}`,true)
-              .addField("الاسم الجديد",`${updated.name}`,true )
-              .addField("ايدي الرتبه",`${re.id}`,true )
-              .addField('من قبل', exec, true)
-              .setTimestamp()
-            log.send(embed).catch(e => {
-              console.log(e);
-            });
-          } catch (e) {
-            console.log(e);
-          }
-        })
-    }, 1000)
-  })
  
 
 client.on('message', message => {
